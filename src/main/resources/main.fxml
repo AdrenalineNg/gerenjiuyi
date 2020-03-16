@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="jiuyixinxi" text="就医信息">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="jiuyixinxiTable" editable="true" layoutX="15.0" layoutY="43.0" prefHeight="486.0" prefWidth="771.0">
+                          <columns>
+                            <TableColumn fx:id="jiuyixinxiVnoColumn" editable="false" prefWidth="75.0" text="就医编号" />
+                            <TableColumn fx:id="jiuyixinxiTimeColumn" prefWidth="100.0" text="就医时间" />
+                              <TableColumn fx:id="jiuyixinxiHospitalColumn" prefWidth="150.0" text="就医地点" />
+                              <TableColumn fx:id="jiuyixinxiDnameColumn" prefWidth="150.0" text="病症名称" />
+                              <TableColumn fx:id="jiuyixinxiTotalColumn" editable="false" prefWidth="75.0" text="总计花费" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="24.0" layoutY="14.0" text="就医编号：" />
+                        <TextField fx:id="jiuyixinxijiuyibianhao" layoutX="84.0" layoutY="10.0" prefHeight="23.0" prefWidth="110.0" />
+                        <Label layoutX="221.0" layoutY="14.0" text="就医年（月日）：" />
+                        <TextField fx:id="jiuyixinxijiuyinianyueri" layoutX="317.0" layoutY="10.0" prefHeight="23.0" prefWidth="110.0" />
+                        <Label layoutX="452.0" layoutY="14.0" text="最近N天：" />
+                        <TextField fx:id="jiuyixinxizuijinntian" layoutX="510.0" layoutY="10.0" prefHeight="23.0" prefWidth="110.0" />
+                        <Button layoutX="642.0" layoutY="10.0" mnemonicParsing="false" onAction="#jiuyixinxiQuery" text="查询" />
+                        <Button layoutX="698.0" layoutY="10.0" mnemonicParsing="false" onAction="#jiuyixinxiResetQuerry" text="清除所有条件" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="jiuyixiangmu" text="就医项目">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                         <TableView fx:id="jiuyixiangmuTable" editable="true" layoutX="15.0" layoutY="43.0" prefHeight="486.0" prefWidth="771.0">
+                             <columns>
+                                 <TableColumn fx:id="jiuyixiangmuVnoColumn" editable="false" prefWidth="75.0" text="就医编号" />
+                                 <TableColumn fx:id="jiuyixiangmuPnoColumn" editable="false" prefWidth="75.0" text="项目编号" />
+                                 <TableColumn fx:id="jiuyixiangmuPnameColumn" prefWidth="200.0" text="项目名称" />
+                                 <TableColumn fx:id="jiuyixiangmuPpriceColumn" prefWidth="150.0" text="项目单价" />
+                                 <TableColumn fx:id="jiuyixiangmuPquantityColumn" prefWidth="150.0" text="项目数量" />
+                                 <TableColumn fx:id="jiuyixiangmuPtotalpriceColumn" editable="false" prefWidth="75.0" text="总计花费" />
+                             </columns>
+                         </TableView>
+                         <Label layoutX="24.0" layoutY="14.0" text="就医编号：" />
+                         <TextField fx:id="jiuyixiangmubianhao" layoutX="84.0" layoutY="10.0" prefHeight="23.0" prefWidth="110.0" />
+                        <Button layoutX="204.0" layoutY="10.0" mnemonicParsing="false" onAction="#jiuyixiangmuQuery" text="查询" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="jiuyiyongyao" text="就医用药">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <TableView fx:id="jiuyiyongyaoTable" editable="true" layoutX="15.0" layoutY="43.0" prefHeight="486.0" prefWidth="771.0">
+                          <columns>
+                              <TableColumn fx:id="jiuyiyongyaoVnoColumn" editable="false" prefWidth="75.0" text="就医编号" />
+                              <TableColumn fx:id="jiuyiyongyaoMnoColumn" editable="false" prefWidth="75.0" text="用药编号" />
+                              <TableColumn fx:id="jiuyiyongyaoMnameColumn" prefWidth="200.0" text="药物名称" />
+                              <TableColumn fx:id="jiuyiyongyaoMpriceColumn" prefWidth="150.0" text="药物单价" />
+                              <TableColumn fx:id="jiuyiyongyaoMquantityColumn" prefWidth="150.0" text="药物数量" />
+                              <TableColumn fx:id="jiuyiyongyaoMtotalpriceColumn" editable="false" prefWidth="75.0" text="总计花费" />
+                          </columns>
+                      </TableView>
+                      <Label layoutX="24.0" layoutY="14.0" text="就医编号：" />
+                      <TextField fx:id="jiuyiyongyaobianhao" layoutX="84.0" layoutY="10.0" prefHeight="23.0" prefWidth="110.0" />
+                      <Button layoutX="204.0" layoutY="10.0" mnemonicParsing="false" onAction="#jiuyiyongyaoQuery" text="查询" />
+                  </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="现存药品" fx:id="xiancunyaopin">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TableView editable="true" layoutX="15.0" layoutY="43.0" prefHeight="486.0" prefWidth="771.0" fx:id="xiancunyaopinTable">
+                            <columns>
+                                <TableColumn editable="false" prefWidth="75.0" text="药物编号" fx:id="xiancunyaopinMsnoColumn" />
+                                <TableColumn editable="false" prefWidth="75.0" text="药物名称" fx:id="xiancunyaopinMsnameColumn" />
+                                <TableColumn prefWidth="200.0" text="药物用量" fx:id="xiancunyaopinDosageColumn" />
+                                <TableColumn prefWidth="150.0" text="药物数量" fx:id="xiancunyaopinMsquantityColumn" />
+                                <TableColumn prefWidth="150.0" text="保质时间(月)" fx:id="xiancunyaopinShelflifeColumn" />
+                                <TableColumn editable="false" prefWidth="75.0" text="过期时间" fx:id="xiancunyaopinExpColumn" />
+                            </columns>
+                        </TableView>
+                        <Label layoutX="24.0" layoutY="14.0" text="药物名称：" />
+                        <TextField layoutX="84.0" layoutY="10.0" prefHeight="23.0" prefWidth="110.0" fx:id="xiancunyaopinbianhao" />
+                        <Button layoutX="204.0" layoutY="10.0" mnemonicParsing="false" onAction="#xiancunyaopinQuery" text="查询" />
+                    </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab  text="年统计信息">
+            </Tab>
+            <Tab  text="月统计信息">
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
